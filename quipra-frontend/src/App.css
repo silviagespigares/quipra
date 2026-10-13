@@ -1,0 +1,248 @@
+/* BREAKPOINTS RESPONSIVE DISSENY ADAPTATIU */
+
+/* Adaptació per a pantalles mitjanes i mòbils */
+@media (max-width: 768px) {
+  /* La landing page passa d'1 columna en comptes de 2 */
+  div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem !important;
+  }
+
+  /* El layout principal amb sidebar es torna vertical */
+  .quipra {
+    flex-direction: column !important;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 1rem !important;
+  }
+
+  .main-content {
+    padding: 1rem !important;
+  }
+
+  /* Targetes d'inici adaptables */
+  .overview {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Reset bàsic i variables */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #fbf9f4; /* Fons crema suau */
+  color: #433422; /* Marró càlid per al text principal */
+}
+
+/* Layout principal de Quipra */
+.quipra {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 260px;
+  background-color: #f5f0e6; /* To crema lleugerament més intens per a la barra */
+  border-right: 1px solid #e6dcce;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  height: 100vh;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #594231;
+  margin-bottom: 2rem;
+  padding-left: 0.5rem;
+}
+
+.menu-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8c7863;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #63503f;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #ebdcc5;
+  color: #433422;
+}
+
+.nav-link.active {
+  background-color: #dfccb0; /* To crema amarat per a l'enllaç actiu */
+  color: #36281b;
+  font-weight: 600;
+}
+
+.sidebar-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e6dcce;
+  margin-top: auto;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #dfccb0;
+  color: #433422;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.sidebar-bottom strong {
+  font-size: 0.875rem;
+  color: #433422;
+}
+
+.sidebar-bottom p {
+  font-size: 0.75rem;
+  color: #8c7863;
+}
+
+/* --- MAIN CONTENT --- */
+.main-content {
+  margin-left: 260px; /* Deixa espai per a la sidebar fixa */
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: calc(100vw - 260px);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8c7863;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.main-content h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #36281b;
+}
+
+.profile-button {
+  width: 40px;
+  height: 40px;
+  background-color: #f0e6d6;
+  border: none;
+  border-radius: 50%;
+  font-weight: 600;
+  color: #594231;
+  cursor: pointer;
+}
+
+.welcome {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e6dcce;
+  margin-bottom: 2rem;
+}
+
+.welcome h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #735e4a;
+}
+
+.welcome p {
+  color: #735e4a;
+}
+
+/* Targetes de resum (Overview) */
+.overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.overview-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e6dcce;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-icon {
+  font-size: 1.25rem;
+  color: #735338;
+  margin-bottom: 0.5rem;
+}
+
+.overview-card p {
+  font-size: 0.875rem;
+  color: #8c7863;
+  margin-bottom: 0.25rem;
+}
+
+.overview-card strong {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #36281b;
+  margin-bottom: 0.25rem;
+}
+
+.overview-card small {
+  font-size: 0.75rem;
+  color: #b39f89;
+}
+
+.content-panel {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e6dcce;
+}
